@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional notary services in Dallas, Texas. Reliable, fast, and affordable notarization for all your legal documents.">
+    <meta name="keywords" content="notary Dallas, Dallas notary public, notarization services, Texas notary">
+    <meta name="author" content="Dallas Notary Services">
+    <title>Dallas Notary Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans text-gray-800 bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-blue-600 text-white p-4 sticky top-0 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Dallas Notary Services</h1>
+            <ul class="flex space-x-6">
+                <li><a href="#home" class="hover:text-blue-200">Home</a></li>
+                <li><a href="#services" class="hover:text-blue-200">Services</a></li>
+                <li><a href="#about" class="hover:text-blue-200">About</a></li>
+                <li><a href="#contact" class="hover:text-blue-200">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-blue-50 py-20 text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-4">Trusted Notary Public in Dallas, Texas</h2>
+            <p class="text-lg mb-6">Fast, reliable, and professional notarization services for all your legal documents.</p>
+            <a href="#contact" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700">Schedule an Appointment</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-10">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Document Notarization</h3>
+                    <p>Notarize legal documents including affidavits, deeds, and contracts with precision and care.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Mobile Notary</h3>
+                    <p>We come to you! Convenient mobile notary services throughout Dallas for your busy schedule.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Loan Signing</h3>
+                    <p>Expert handling of mortgage and loan documents to ensure a smooth closing process.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-blue-50 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-10">About Us</h2>
+            <p class="text-lg text-center max-w-2xl mx-auto">Dallas Notary Services is your trusted partner for professional notarization in Dallas, Texas. With years of experience and a commitment to accuracy, we provide reliable services to individuals and businesses. Our certified notaries are dedicated to ensuring your documents are handled with care and compliance.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-10">Contact Us</h2>
+            <div class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-md">
+                <form id="contact-form" action="https://formspree.io/f/https://formspree.io/f/xldlpqob" method="POST">
+                    <div class="mb-4">
+                        <label for="name" class="block text-sm font-medium">Name</label>
+                        <input type="text" id="name" name="name" class="w-full p-2 border rounded-md" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-sm font-medium">Email</label>
+                        <input type="email" id="email" name="email" class="w-full p-2 border rounded-md" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="block text-sm font-medium">Message</label>
+                        <textarea id="message" name="message" class="w-full p-2 border rounded-md" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 w-full">Send Message</button>
+                </form>
+            </div>
+            <p class="text-center mt-6">Phone: (214) 555-1234 | Email: info@dallasnotaryservices.com</p>
+            <p class="text-center">Address: 1234 Main St, Dallas, TX 75201</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white py-4 text-center">
+        <p>&copy; 2025 Dallas Notary Services. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission handling
+        document.getElementById('contact-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const form = this;
+
+            try {
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    alert('Thank you for your message! We will get back to you soon.');
+                    form.reset();
+                } else {
+                    alert('There was an error sending your message. Please try again later.');
+                }
+            } catch (error) {
+                alert('There was an error sending your message. Please try again later.');
+            }
+        });
+    </script>
+</body>
+</html>
